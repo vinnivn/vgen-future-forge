@@ -9,10 +9,10 @@ import {
 } from "lucide-react";
 
 const programs = [
-  { grade: "Grade 6", title: "Beginner Robotics", icon: Bot, desc: "Introduction to robotics fundamentals and simple electronics." },
-  { grade: "Grade 7", title: "Foundations of Robotics", icon: CircuitBoard, desc: "Arduino programming, sensors, and motor control." },
-  { grade: "Grade 8", title: "Intermediate Robotics", icon: Wrench, desc: "Automation, Bluetooth control, and smart robots." },
-  { grade: "Grade 9", title: "Humanoid Robotics", icon: BrainCircuit, desc: "Servo motors, mechanical design, and prototypes." },
+  { grade: "Grade 6", title: "Milo Bot", icon: Bot, desc: "Introduction to robotics fundamentals and simple electronics." },
+  { grade: "Grade 7", title: "Geary Tech", icon: CircuitBoard, desc: "Arduino programming, sensors, and motor control." },
+  { grade: "Grade 8", title: "Neo Bot", icon: Wrench, desc: "Automation, Bluetooth control, and smart robots." },
+  { grade: "Grade 9", title: "Grab-It", icon: BrainCircuit, desc: "Servo motors, mechanical design, and prototypes." },
 ];
 
 const whyUs = [
@@ -59,8 +59,7 @@ const Index = () => (
         <AnimatedSection>
           <SectionHeading title="About VGEN" gradient />
           <p className="text-center text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-            We introduce students to robotics through hands-on, project-based learning,
-            helping them build real-world skills in electronics, coding, and innovation.
+            At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs are designed to transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way.
           </p>
         </AnimatedSection>
       </div>
