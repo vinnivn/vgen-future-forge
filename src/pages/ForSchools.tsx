@@ -8,9 +8,9 @@ import {
 } from "lucide-react";
 
 const objectives = [
-  { icon: GraduationCap, label: "STEM Learning", desc: "Integrate robotics into school curriculum" },
-  { icon: Target, label: "Skill Development", desc: "Build critical thinking and problem-solving" },
-  { icon: Lightbulb, label: "Innovation", desc: "Encourage creative solutions through technology" },
+  { icon: GraduationCap, label: "STEM Learning", desc: "Integrate robotics into school curriculum to make learning more practical and engaging. Students connect science, technology, engineering, and mathematics through hands-on activities, helping them understand concepts better and apply them in real-life situations." },
+  { icon: Target, label: "Skill Development", desc: "Build critical thinking, logical reasoning, and problem-solving abilities through interactive projects and challenges. Students develop confidence, teamwork, and analytical skills that are essential for both academic success and future careers." },
+  { icon: Lightbulb, label: "Innovation", desc: "Encourage creative solutions through technology by allowing students to explore, design, and experiment with their ideas. This fosters an innovative mindset, enabling them to think independently and develop unique approaches to real-world problems." },
 ];
 
 const highlights = [

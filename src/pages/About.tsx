@@ -3,10 +3,10 @@ import SectionHeading from "@/components/SectionHeading";
 import { Eye, Rocket, Cpu, Wrench, Lightbulb, GraduationCap } from "lucide-react";
 
 const values = [
-  { icon: Cpu, label: "Hands-on Learning", desc: "Students learn by building real robots and circuits." },
-  { icon: Lightbulb, label: "Creativity & Innovation", desc: "We encourage creative thinking and unique solutions." },
-  { icon: Wrench, label: "Real-world Application", desc: "Projects mirror real industry challenges and technologies." },
-  { icon: GraduationCap, label: "Structured Education", desc: "A grade-wise curriculum designed for progressive learning." },
+  { icon: Cpu, label: "Hands-on Learning", desc: "Students learn by building real robots and circuits, gaining practical experience with electronics, sensors, and coding. This approach helps them understand concepts clearly while developing confidence through active participation and experimentation." },
+  { icon: Lightbulb, label: "Creativity & Innovation", desc: "We encourage creative thinking and unique solutions by allowing students to design, experiment, and improve their own ideas. This fosters innovation and helps students think beyond textbooks to solve real-world problems." },
+  { icon: Wrench, label: "Real-world Application", desc: "Projects are designed to reflect real industry challenges and technologies, giving students exposure to practical use cases. This helps them understand how robotics and automation are applied in everyday life and future careers." },
+  { icon: GraduationCap, label: "Structured Education", desc: "Our grade-wise curriculum is carefully designed for progressive learning, ensuring students build strong foundations before moving to advanced concepts. Each level is aligned to their understanding, making learning smooth and effective." },
 ];
 
 const About = () => (
@@ -14,7 +14,7 @@ const About = () => (
     <div className="container mx-auto px-4">
       <SectionHeading
         title="About VGEN"
-        subtitle="We're on a mission to make robotics education accessible, exciting, and impactful."
+        subtitle="At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs are designed to transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way. We focus on building practical skills, logical thinking, and innovation from an early stage, empowering students to not just learn technology but create with it. Through structured learning, expert guidance, and project-based experiences, VGEN nurtures confident, future-ready individuals who are prepared to lead in a rapidly evolving technological world."
         gradient
       />
 
@@ -42,7 +42,7 @@ const About = () => (
             </div>
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
             <p className="text-primary-foreground/85 leading-relaxed">
-              To provide hands-on robotics education that simplifies technology and encourages innovation among school students.
+              To provide hands-on education that simplifies technology and encourages innovation among school students.
             </p>
           </div>
         </AnimatedSection>
