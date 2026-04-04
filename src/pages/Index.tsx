@@ -59,8 +59,7 @@ const Index = () => (
         <AnimatedSection>
           <SectionHeading title="About VGEN" gradient />
           <p className="text-center text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-            We introduce students to robotics through hands-on, project-based learning,
-            helping them build real-world skills in electronics, coding, and innovation.
+            At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs are designed to transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way.
           </p>
         </AnimatedSection>
       </div>
