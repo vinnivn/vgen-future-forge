@@ -9,10 +9,10 @@ import {
 } from "lucide-react";
 
 const programs = [
-  { grade: "Grade 6", title: "Beginner Robotics", icon: Bot, desc: "Introduction to robotics fundamentals and simple electronics." },
-  { grade: "Grade 7", title: "Foundations of Robotics", icon: CircuitBoard, desc: "Arduino programming, sensors, and motor control." },
-  { grade: "Grade 8", title: "Intermediate Robotics", icon: Wrench, desc: "Automation, Bluetooth control, and smart robots." },
-  { grade: "Grade 9", title: "Humanoid Robotics", icon: BrainCircuit, desc: "Servo motors, mechanical design, and prototypes." },
+  { grade: "Grade 6", title: "Milo Bot", icon: Bot, desc: "Introduction to robotics fundamentals and simple electronics." },
+  { grade: "Grade 7", title: "Geary Tech", icon: CircuitBoard, desc: "Arduino programming, sensors, and motor control." },
+  { grade: "Grade 8", title: "Neo Bot", icon: Wrench, desc: "Automation, Bluetooth control, and smart robots." },
+  { grade: "Grade 9", title: "Grab-It", icon: BrainCircuit, desc: "Servo motors, mechanical design, and prototypes." },
 ];
 
 const whyUs = [
