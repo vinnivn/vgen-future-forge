@@ -49,13 +49,16 @@ const Footer = () => (
           <h4 className="font-semibold mb-3">Contact Us</h4>
           <ul className="space-y-3 text-sm text-primary-foreground/70">
             <li className="flex items-center gap-2">
-              <Phone size={14} /> +91 98765 43210
+              <Phone size={14} /> +91 6363851378
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone size={14} /> +91 6364355011
             </li>
             <li className="flex items-center gap-2">
               <Mail size={14} /> info@vgen.in
             </li>
             <li className="flex items-center gap-2">
-              <MapPin size={14} /> India
+              <MapPin size={14} /> Mysore, Karnataka, India
             </li>
           </ul>
         </div>

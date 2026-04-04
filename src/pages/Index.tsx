@@ -3,16 +3,19 @@ import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
+import ottoBotImg from "@/assets/otto-bot.jpg";
+import lineFollowerImg from "@/assets/line-follower-bot.jpg";
+import rcBotImg from "@/assets/rc-bot.jpg";
+import pickPlaceImg from "@/assets/pick-place-bot.jpg";
 import {
   Cpu, Cog, Lightbulb, Users, BookOpen, Rocket,
-  Bot, CircuitBoard, Wrench, BrainCircuit,
 } from "lucide-react";
 
 const programs = [
-  { grade: "Grade 6", title: "Milo Bot", icon: Bot, desc: "Introduction to robotics fundamentals and simple electronics." },
-  { grade: "Grade 7", title: "Geary Tech", icon: CircuitBoard, desc: "Arduino programming, sensors, and motor control." },
-  { grade: "Grade 8", title: "Neo Bot", icon: Wrench, desc: "Automation, Bluetooth control, and smart robots." },
-  { grade: "Grade 9", title: "Grab-It", icon: BrainCircuit, desc: "Servo motors, mechanical design, and prototypes." },
+  { grade: "Grade 6", title: "Milo Bot", image: ottoBotImg, desc: "Introduction to robotics fundamentals and simple electronics." },
+  { grade: "Grade 7", title: "Geary Tech", image: lineFollowerImg, desc: "Arduino programming, sensors, and motor control." },
+  { grade: "Grade 8", title: "Neo Bot", image: rcBotImg, desc: "Automation, Bluetooth control, and smart robots." },
+  { grade: "Grade 9", title: "Grab-It", image: pickPlaceImg, desc: "Servo motors, mechanical design, and prototypes." },
 ];
 
 const whyUs = [
@@ -72,16 +75,18 @@ const Index = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {programs.map((p, i) => (
             <AnimatedSection key={p.grade} delay={i * 100}>
-              <div className="bg-card rounded-xl p-6 card-shadow hover:elevated-shadow transition-shadow duration-300 h-full flex flex-col">
-                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-4">
-                  <p.icon className="text-secondary" size={24} />
+              <div className="bg-card rounded-xl overflow-hidden card-shadow hover:elevated-shadow transition-shadow duration-300 h-full flex flex-col">
+                <div className="w-full h-40 overflow-hidden">
+                  <img src={p.image} alt={p.title} className="w-full h-full object-cover" loading="lazy" width={640} height={640} />
                 </div>
-                <span className="text-xs font-semibold text-accent uppercase tracking-wider">{p.grade}</span>
-                <h3 className="text-lg font-bold mt-1 mb-2 text-foreground">{p.title}</h3>
-                <p className="text-muted-foreground text-sm flex-1">{p.desc}</p>
-                <Link to="/programs" className="text-secondary text-sm font-medium mt-4 hover:underline inline-block">
-                  Learn more →
-                </Link>
+                <div className="p-6 flex flex-col flex-1">
+                  <span className="text-xs font-semibold text-accent uppercase tracking-wider">{p.grade}</span>
+                  <h3 className="text-lg font-bold mt-1 mb-2 text-foreground">{p.title}</h3>
+                  <p className="text-muted-foreground text-sm flex-1">{p.desc}</p>
+                  <Link to="/programs" className="text-secondary text-sm font-medium mt-4 hover:underline inline-block">
+                    Learn more →
+                  </Link>
+                </div>
               </div>
             </AnimatedSection>
           ))}

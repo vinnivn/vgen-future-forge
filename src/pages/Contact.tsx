@@ -77,9 +77,10 @@ const Contact = () => {
 
               <div className="space-y-6">
                 {[
-                  { icon: Phone, label: "Phone", value: "+91 98765 43210" },
+                  { icon: Phone, label: "Phone", value: "+91 6363851378" },
+                  { icon: Phone, label: "Phone", value: "+91 6364355011" },
                   { icon: Mail, label: "Email", value: "info@vgen.in" },
-                  { icon: MapPin, label: "Location", value: "India" },
+                  { icon: MapPin, label: "Location", value: "Mysore, Karnataka, India" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-lg bg-hero-gradient flex items-center justify-center flex-shrink-0">

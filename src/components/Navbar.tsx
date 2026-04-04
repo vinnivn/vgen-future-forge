@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import vgenLogo from "@/assets/vgen-logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -14,13 +15,27 @@ const navLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
 
   return (
     <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="font-heading text-2xl font-bold text-gradient">
-          VGEN
-        </Link>
+        <div className="flex items-center gap-3">
+          {!isHome && (
+            <button
+              onClick={() => navigate(-1)}
+              className="p-1.5 rounded-lg hover:bg-muted transition-colors text-foreground/70 hover:text-foreground"
+              aria-label="Go back"
+            >
+              <ArrowLeft size={20} />
+            </button>
+          )}
+          <Link to="/" className="flex items-center gap-2">
+            <img src={vgenLogo} alt="VGEN Logo" className="h-9 w-9 object-contain" />
+            <span className="font-heading text-2xl font-bold text-gradient">VGEN</span>
+          </Link>
+        </div>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">

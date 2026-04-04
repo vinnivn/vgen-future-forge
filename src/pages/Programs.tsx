@@ -1,12 +1,16 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
-import { Bot, CircuitBoard, Wrench, BrainCircuit, Check } from "lucide-react";
+import { Check } from "lucide-react";
+import ottoBotImg from "@/assets/otto-bot.jpg";
+import lineFollowerImg from "@/assets/line-follower-bot.jpg";
+import rcBotImg from "@/assets/rc-bot.jpg";
+import pickPlaceImg from "@/assets/pick-place-bot.jpg";
 
 const grades = [
   {
     grade: "Grade 6",
     title: "Milo Bot",
-    icon: Bot,
+    image: ottoBotImg,
     desc: "Start your robotics journey with the basics of electronics and simple robot building.",
     topics: [
       "Basics of robotics and components",
@@ -18,7 +22,7 @@ const grades = [
   {
     grade: "Grade 7",
     title: "Geary Tech",
-    icon: CircuitBoard,
+    image: lineFollowerImg,
     desc: "Dive deeper into electronics, programming, and sensor-based projects.",
     topics: [
       "Electronics and circuits",
@@ -31,7 +35,7 @@ const grades = [
   {
     grade: "Grade 8",
     title: "Neo Bot",
-    icon: Wrench,
+    image: rcBotImg,
     desc: "Build smart, autonomous robots with advanced sensors and wireless control.",
     topics: [
       "Advanced sensors",
@@ -44,7 +48,7 @@ const grades = [
   {
     grade: "Grade 9",
     title: "Grab-It",
-    icon: BrainCircuit,
+    image: pickPlaceImg,
     desc: "Design and prototype humanoid robotic components with servo-based systems.",
     topics: [
       "Servo hand mechanics",
@@ -69,10 +73,10 @@ const Programs = () => (
         {grades.map((g, i) => (
           <AnimatedSection key={g.grade} delay={i * 100}>
             <div className={`flex flex-col lg:flex-row gap-8 items-start ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-              {/* Icon block */}
+              {/* Image block */}
               <div className="flex-shrink-0 w-full lg:w-72 flex justify-center">
-                <div className="w-32 h-32 rounded-2xl bg-hero-gradient flex items-center justify-center elevated-shadow">
-                  <g.icon className="text-primary-foreground" size={56} />
+                <div className="w-56 h-56 rounded-2xl overflow-hidden elevated-shadow">
+                  <img src={g.image} alt={g.title} className="w-full h-full object-cover" loading="lazy" width={640} height={640} />
                 </div>
               </div>
 
