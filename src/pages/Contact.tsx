@@ -79,7 +79,7 @@ const Contact = () => {
                 {[
                   { icon: Phone, label: "Phone", value: "+91 6363851378" },
                   { icon: Phone, label: "Phone", value: "+91 6364355011" },
-                  { icon: Mail, label: "Email", value: "info@vgen.in" },
+                  { icon: Mail, label: "Email", value: "contact@vgen.co.in" },
                   { icon: MapPin, label: "Location", value: "Mysore, Karnataka, India" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
