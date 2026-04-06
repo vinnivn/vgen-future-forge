@@ -55,7 +55,7 @@ const Footer = () => (
               <Phone size={14} /> +91 6364355011
             </li>
             <li className="flex items-center gap-2">
-              <Mail size={14} /> info@vgen.in
+              <Mail size={14} /> contact@vgen.co.in
             </li>
             <li className="flex items-center gap-2">
               <MapPin size={14} /> Mysore, Karnataka, India
