@@ -3,15 +3,17 @@ import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
+import rcSoccerImg from "@/assets/rc-soccer-bot.jpg";
 import ottoBotImg from "@/assets/otto-bot.jpg";
 import lineFollowerImg from "@/assets/line-follower-bot.jpg";
 import rcBotImg from "@/assets/rc-bot.jpg";
 import pickPlaceImg from "@/assets/pick-place-bot.jpg";
 import {
-  Cpu, Cog, Lightbulb, Users, BookOpen, Rocket,
+  Cpu, Cog, Lightbulb, Users, BookOpen, Rocket, Gamepad2,
 } from "lucide-react";
 
 const programs = [
+  { grade: "Grade 5", title: "RC Bot & Robo Soccer", image: rcSoccerImg, desc: "Beginner-friendly intro to robotics with RC bots and soccer challenges." },
   { grade: "Grade 6", title: "Milo Bot", image: ottoBotImg, desc: "Introduction to robotics fundamentals and simple electronics." },
   { grade: "Grade 7", title: "Geary Tech", image: lineFollowerImg, desc: "Arduino programming, sensors, and motor control." },
   { grade: "Grade 8", title: "Neo Bot", image: rcBotImg, desc: "Automation, Bluetooth control, and smart robots." },
@@ -19,6 +21,7 @@ const programs = [
 ];
 
 const whyUs = [
+  { icon: Gamepad2, label: "Play-based Learning" },
   { icon: Cpu, label: "Hands-on Learning" },
   { icon: BookOpen, label: "Structured Curriculum" },
   { icon: Cog, label: "Real-world Projects" },
@@ -42,7 +45,7 @@ const Index = () => (
             <span className="text-accent">With Us</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Hands-on Robotics Programs for School Students
+            Hands-on Robotics Programs available for Grades 5–9
           </p>
           <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-8">
@@ -62,7 +65,7 @@ const Index = () => (
         <AnimatedSection>
           <SectionHeading title="About VGEN" gradient />
           <p className="text-center text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-            At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs are designed to transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way.
+            At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs, designed for Grades 5 to 9, transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way.
           </p>
         </AnimatedSection>
       </div>
@@ -72,7 +75,7 @@ const Index = () => (
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
         <SectionHeading title="Our Programs" subtitle="Structured learning paths from beginner to advanced robotics" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {programs.map((p, i) => (
             <AnimatedSection key={p.grade} delay={i * 100}>
               <div className="bg-card rounded-xl overflow-hidden card-shadow hover:elevated-shadow transition-shadow duration-300 h-full flex flex-col">

@@ -1,12 +1,27 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
 import { Check } from "lucide-react";
+import rcSoccerImg from "@/assets/rc-soccer-bot.jpg";
 import ottoBotImg from "@/assets/otto-bot.jpg";
 import lineFollowerImg from "@/assets/line-follower-bot.jpg";
 import rcBotImg from "@/assets/rc-bot.jpg";
 import pickPlaceImg from "@/assets/pick-place-bot.jpg";
 
 const grades = [
+  {
+    grade: "Grade 5",
+    title: "RC Bot & Robo Soccer",
+    image: rcSoccerImg,
+    desc: "Beginner-friendly introduction to robotics through building an RC bot and play-based Robo Soccer challenges.",
+    topics: [
+      "Introduction to robotics and basic components",
+      "Basics of circuits and power systems",
+      "DC motors and movement control",
+      "Remote control (wired / wireless basics)",
+      "Building an RC Bot",
+      "Robo Soccer gameplay and challenges",
+    ],
+  },
   {
     grade: "Grade 6",
     title: "Milo Bot",
