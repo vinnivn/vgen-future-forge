@@ -3,15 +3,17 @@ import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
+import rcSoccerImg from "@/assets/rc-soccer-bot.jpg";
 import ottoBotImg from "@/assets/otto-bot.jpg";
 import lineFollowerImg from "@/assets/line-follower-bot.jpg";
 import rcBotImg from "@/assets/rc-bot.jpg";
 import pickPlaceImg from "@/assets/pick-place-bot.jpg";
 import {
-  Cpu, Cog, Lightbulb, Users, BookOpen, Rocket,
+  Cpu, Cog, Lightbulb, Users, BookOpen, Rocket, Gamepad2,
 } from "lucide-react";
 
 const programs = [
+  { grade: "Grade 5", title: "RC Bot & Robo Soccer", image: rcSoccerImg, desc: "Beginner-friendly intro to robotics with RC bots and soccer challenges." },
   { grade: "Grade 6", title: "Milo Bot", image: ottoBotImg, desc: "Introduction to robotics fundamentals and simple electronics." },
   { grade: "Grade 7", title: "Geary Tech", image: lineFollowerImg, desc: "Arduino programming, sensors, and motor control." },
   { grade: "Grade 8", title: "Neo Bot", image: rcBotImg, desc: "Automation, Bluetooth control, and smart robots." },
@@ -19,6 +21,7 @@ const programs = [
 ];
 
 const whyUs = [
+  { icon: Gamepad2, label: "Play-based Learning" },
   { icon: Cpu, label: "Hands-on Learning" },
   { icon: BookOpen, label: "Structured Curriculum" },
   { icon: Cog, label: "Real-world Projects" },
