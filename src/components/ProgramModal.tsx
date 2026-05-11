@@ -26,7 +26,7 @@ const ProgramModal = ({ program, open, onOpenChange }: Props) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="max-w-2xl w-[calc(100%-2rem)] max-h-[90vh] overflow-y-auto overflow-x-hidden p-0 rounded-2xl border-0 bg-card scrollbar-thin"
+        className="max-w-2xl w-[calc(100%-2rem)] max-h-[90vh] overflow-y-auto overflow-x-hidden p-0 rounded-2xl border-0 bg-card [&>button]:hidden"
         style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.2)" }}
       >
         {/* Banner */}
@@ -37,6 +37,10 @@ const ProgramModal = ({ program, open, onOpenChange }: Props) => {
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-card to-transparent pointer-events-none" />
+          <DialogClose className="absolute top-3 right-3 w-9 h-9 rounded-full bg-card/90 backdrop-blur-sm flex items-center justify-center text-foreground shadow-md hover:bg-primary hover:text-primary-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary">
+            <X size={18} />
+            <span className="sr-only">Close</span>
+          </DialogClose>
         </div>
 
         {/* Content */}
