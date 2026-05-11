@@ -24,37 +24,45 @@ const ProgramModal = ({ program, open, onOpenChange }: Props) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-0 rounded-2xl border-0 bg-card/95 backdrop-blur-xl shadow-2xl">
-        <div className="relative">
-          <div className="h-44 sm:h-56 w-full overflow-hidden rounded-t-2xl">
-            <img src={program.image} alt={program.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+      <DialogContent
+        className="max-w-2xl w-[calc(100%-2rem)] max-h-[90vh] overflow-y-auto overflow-x-hidden p-0 rounded-2xl border-0 bg-card scrollbar-thin"
+        style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.2)" }}
+      >
+        {/* Banner */}
+        <div className="relative w-full h-56 sm:h-64 overflow-hidden rounded-t-2xl bg-muted">
+          <img
+            src={program.image}
+            alt={program.title}
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-card to-transparent pointer-events-none" />
+        </div>
+
+        {/* Content */}
+        <div className="px-6 sm:px-8 py-6">
+          <DialogHeader className="text-left space-y-2">
+            <span className="text-xs font-bold text-accent uppercase tracking-widest">{program.grade}</span>
+            <DialogTitle className="text-2xl sm:text-3xl font-bold text-foreground leading-tight">{program.title}</DialogTitle>
+            <DialogDescription className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+              {program.shortDesc}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="mt-6 space-y-5">
+            <Section icon={<Sparkles size={16} />} title="Program Includes" items={program.includes} />
+            <Section icon={<Target size={16} />} title="Learning Outcomes" items={program.outcomes} />
+            <Section icon={<Check size={16} />} title="Additional Features" items={program.features} />
           </div>
-          <div className="px-6 sm:px-8 pb-8 -mt-10 relative">
-            <DialogHeader className="text-left space-y-2">
-              <span className="text-xs font-bold text-accent uppercase tracking-widest">{program.grade}</span>
-              <DialogTitle className="text-2xl sm:text-3xl font-bold text-foreground">{program.title}</DialogTitle>
-              <DialogDescription className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                {program.shortDesc}
-              </DialogDescription>
-            </DialogHeader>
 
-            <div className="mt-6 space-y-6">
-              <Section icon={<Sparkles size={16} />} title="Program Includes" items={program.includes} />
-              <Section icon={<Target size={16} />} title="Learning Outcomes" items={program.outcomes} />
-              <Section icon={<Check size={16} />} title="Additional Features" items={program.features} />
-            </div>
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button asChild className="flex-1 bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold">
-                <Link to="/contact" onClick={() => onOpenChange(false)}>
-                  <Send size={16} className="mr-2" /> Enroll Now
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="flex-1 font-semibold">
-                <Link to="/programs" onClick={() => onOpenChange(false)}>View All Programs</Link>
-              </Button>
-            </div>
+          <div className="mt-7 flex flex-col sm:flex-row gap-3">
+            <Button asChild className="flex-1 bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold">
+              <Link to="/contact" onClick={() => onOpenChange(false)}>
+                <Send size={16} className="mr-2" /> Enroll Now
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="flex-1 font-semibold">
+              <Link to="/programs" onClick={() => onOpenChange(false)}>View All Programs</Link>
+            </Button>
           </div>
         </div>
       </DialogContent>
