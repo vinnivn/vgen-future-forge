@@ -1,24 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
+import ProgramModal, { type ProgramDetail } from "@/components/ProgramModal";
+import { programDetails } from "@/data/programDetails";
 import heroBg from "@/assets/hero-bg.jpg";
-import rcSoccerImg from "@/assets/rc-soccer-bot.jpg";
-import ottoBotImg from "@/assets/otto-bot.jpg";
-import lineFollowerImg from "@/assets/line-follower-bot.jpg";
-import rcBotImg from "@/assets/rc-bot.jpg";
-import pickPlaceImg from "@/assets/pick-place-bot.jpg";
 import {
   Cpu, Cog, Lightbulb, Users, BookOpen, Rocket, Gamepad2,
 } from "lucide-react";
 
-const programs = [
-  { grade: "Grade 5", title: "RC Bot & Robo Soccer", image: rcSoccerImg, desc: "Beginner-friendly intro to robotics with RC bots and soccer challenges." },
-  { grade: "Grade 6", title: "Milo Bot", image: ottoBotImg, desc: "Introduction to robotics fundamentals and simple electronics." },
-  { grade: "Grade 7", title: "Geary Tech", image: lineFollowerImg, desc: "Arduino programming, sensors, and motor control." },
-  { grade: "Grade 8", title: "Neo Bot", image: rcBotImg, desc: "Automation, Bluetooth control, and smart robots." },
-  { grade: "Grade 9", title: "Grab-It", image: pickPlaceImg, desc: "Servo motors, mechanical design, and prototypes." },
-];
+const cardSubtitles: Record<string, string> = {
+  "Grade 5": "RC Bot & Robo Soccer",
+  "Grade 6": "Milo Bot",
+  "Grade 7": "Geary Tech",
+  "Grade 8": "Neo Bot",
+  "Grade 9": "Grab-It",
+};
 
 const whyUs = [
   { icon: Gamepad2, label: "Play-based Learning" },
@@ -30,109 +28,124 @@ const whyUs = [
   { icon: Rocket, label: "Student Engagement" },
 ];
 
-const Index = () => (
-  <main>
-    {/* Hero */}
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="Students building robots" className="w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-primary/80" />
-      </div>
-      <div className="container mx-auto px-4 relative z-10 py-20">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-up">
-            Explore the Future<br />
-            <span className="text-accent">With Us</span>
-          </h1>
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Hands-on Robotics Programs available for Grades 5–9
-          </p>
-          <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-8">
-              <Link to="/contact">Get Started</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold text-base px-8">
-              <Link to="/contact">Contact Us</Link>
-            </Button>
+const Index = () => {
+  const [selected, setSelected] = useState<ProgramDetail | null>(null);
+  const [open, setOpen] = useState(false);
+
+  const openProgram = (p: ProgramDetail) => {
+    setSelected(p);
+    setOpen(true);
+  };
+
+  return (
+    <main>
+      {/* Hero */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="Students building robots" className="w-full h-full object-cover" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10 py-20">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-up">
+              Explore the Future<br />
+              <span className="text-accent">With Us</span>
+            </h1>
+            <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+              Hands-on Robotics Programs available for Grades 5–9
+            </p>
+            <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-8">
+                <Link to="/contact">Get Started</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold text-base px-8">
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* About */}
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <AnimatedSection>
-          <SectionHeading title="About VGEN" gradient />
-          <p className="text-center text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-            At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs, designed for Grades 5 to 9, transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way.
-          </p>
-        </AnimatedSection>
-      </div>
-    </section>
-
-    {/* Programs */}
-    <section className="py-20 bg-muted/50">
-      <div className="container mx-auto px-4">
-        <SectionHeading title="Our Programs" subtitle="Structured learning paths from beginner to advanced robotics" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {programs.map((p, i) => (
-            <AnimatedSection key={p.grade} delay={i * 100}>
-              <div className="bg-card rounded-xl overflow-hidden card-shadow hover:elevated-shadow transition-shadow duration-300 h-full flex flex-col">
-                <div className="w-full h-40 overflow-hidden">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover" loading="lazy" width={640} height={640} />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-semibold text-accent uppercase tracking-wider">{p.grade}</span>
-                  <h3 className="text-lg font-bold mt-1 mb-2 text-foreground">{p.title}</h3>
-                  <p className="text-muted-foreground text-sm flex-1">{p.desc}</p>
-                  <Link to="/programs" className="text-secondary text-sm font-medium mt-4 hover:underline inline-block">
-                    Learn more →
-                  </Link>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
+      {/* About */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <SectionHeading title="About VGEN" gradient />
+            <p className="text-center text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
+              At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs, designed for Grades 5 to 9, transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way.
+            </p>
+          </AnimatedSection>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Why Choose Us */}
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <SectionHeading title="Why Choose VGEN?" gradient />
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-          {whyUs.map((item, i) => (
-            <AnimatedSection key={item.label} delay={i * 80}>
-              <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-muted/50 transition-colors">
-                <div className="w-14 h-14 rounded-full bg-hero-gradient flex items-center justify-center mb-3">
-                  <item.icon className="text-primary-foreground" size={24} />
-                </div>
-                <span className="text-sm font-semibold text-foreground">{item.label}</span>
-              </div>
-            </AnimatedSection>
-          ))}
+      {/* Programs */}
+      <section className="py-20 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <SectionHeading title="Our Programs" subtitle="Click any card to explore the full program details" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {programDetails.map((p, i) => (
+              <AnimatedSection key={p.grade} delay={i * 100}>
+                <button
+                  onClick={() => openProgram(p)}
+                  className="text-left w-full bg-card rounded-xl overflow-hidden card-shadow hover:elevated-shadow hover:-translate-y-1 transition-all duration-300 h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-accent"
+                >
+                  <div className="w-full h-40 overflow-hidden">
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" width={640} height={640} />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <span className="text-xs font-semibold text-accent uppercase tracking-wider">{p.grade}</span>
+                    <h3 className="text-lg font-bold mt-1 mb-2 text-foreground">{cardSubtitles[p.grade] ?? p.title}</h3>
+                    <p className="text-muted-foreground text-sm flex-1">{p.shortDesc.split(".")[0]}.</p>
+                    <span className="text-secondary text-sm font-medium mt-4 inline-block">
+                      Learn more →
+                    </span>
+                  </div>
+                </button>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* CTA */}
-    <section className="py-20 bg-hero-gradient">
-      <div className="container mx-auto px-4 text-center">
-        <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Bring Robotics to Your School Today
-          </h2>
-          <p className="text-primary-foreground/80 mb-8 text-lg">
-            Partner with VGEN to create future-ready students.
-          </p>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-10">
-            <Link to="/contact">Contact Now</Link>
-          </Button>
-        </AnimatedSection>
-      </div>
-    </section>
-  </main>
-);
+      {/* Why Choose Us */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <SectionHeading title="Why Choose VGEN?" gradient />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {whyUs.map((item, i) => (
+              <AnimatedSection key={item.label} delay={i * 80}>
+                <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-muted/50 transition-colors">
+                  <div className="w-14 h-14 rounded-full bg-hero-gradient flex items-center justify-center mb-3">
+                    <item.icon className="text-primary-foreground" size={24} />
+                  </div>
+                  <span className="text-sm font-semibold text-foreground">{item.label}</span>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-hero-gradient">
+        <div className="container mx-auto px-4 text-center">
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+              Bring Robotics to Your School Today
+            </h2>
+            <p className="text-primary-foreground/80 mb-8 text-lg">
+              Partner with VGEN to create future-ready students.
+            </p>
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-10">
+              <Link to="/contact">Contact Now</Link>
+            </Button>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <ProgramModal program={selected} open={open} onOpenChange={setOpen} />
+    </main>
+  );
+};
 
 export default Index;

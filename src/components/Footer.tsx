@@ -37,6 +37,7 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold mb-3">Programs</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/70">
+            <li>Grade 5 – RC Bot & Robo Soccer</li>
             <li>Grade 6 – Beginner</li>
             <li>Grade 7 – Foundations</li>
             <li>Grade 8 – Intermediate</li>
