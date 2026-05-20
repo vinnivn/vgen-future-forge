@@ -4,17 +4,54 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  school: z.string().trim().max(150).optional(),
+  email: z.string().trim().email("Invalid email address").max(255),
+  phone: z.string().trim().min(5, "Phone is required").max(30),
+  message: z.string().trim().min(1, "Message is required").max(2000),
+});
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", school: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", school: "", email: "", phone: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message sent!", description: "We'll get back to you soon." });
-    setForm({ name: "", school: "", phone: "", message: "" });
+    const parsed = contactSchema.safeParse(form);
+    if (!parsed.success) {
+      const first = Object.values(parsed.error.flatten().fieldErrors)[0]?.[0];
+      toast({ title: "Please check the form", description: first ?? "Invalid input", variant: "destructive" });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(parsed.data),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      toast({
+        title: "Message sent!",
+        description: "Thank you for contacting VGEN. Our team will reach out to you shortly.",
+      });
+      setForm({ name: "", school: "", email: "", phone: "", message: "" });
+    } catch {
+      toast({
+        title: "Submission failed",
+        description: "Something went wrong. Please try again or email us directly at contact@vgen.co.in.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,12 +73,23 @@ const Contact = () => {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
+                disabled={loading}
                 className="bg-muted/50"
               />
               <Input
-                placeholder="School Name"
+                placeholder="School / Organization"
                 value={form.school}
                 onChange={(e) => setForm({ ...form, school: e.target.value })}
+                disabled={loading}
+                className="bg-muted/50"
+              />
+              <Input
+                type="email"
+                placeholder="Email Address"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                required
+                disabled={loading}
                 className="bg-muted/50"
               />
               <Input
@@ -49,6 +97,7 @@ const Contact = () => {
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 required
+                disabled={loading}
                 className="bg-muted/50"
               />
               <Textarea
@@ -56,11 +105,24 @@ const Contact = () => {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
+                disabled={loading}
                 rows={4}
                 className="bg-muted/50"
               />
-              <Button type="submit" className="w-full bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold">
-                <Send size={16} className="mr-2" /> Send Message
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 size={16} className="mr-2 animate-spin" /> Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={16} className="mr-2" /> Send Message
+                  </>
+                )}
               </Button>
             </form>
           </AnimatedSection>
@@ -81,8 +143,8 @@ const Contact = () => {
                   { icon: Phone, label: "Phone", value: "+91 6364355011" },
                   { icon: Mail, label: "Email", value: "contact@vgen.co.in" },
                   { icon: MapPin, label: "Location", value: "Mysore, Karnataka, India" },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-center gap-4">
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-lg bg-hero-gradient flex items-center justify-center flex-shrink-0">
                       <item.icon className="text-primary-foreground" size={20} />
                     </div>
