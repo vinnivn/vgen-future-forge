@@ -10,6 +10,7 @@ import Programs from "./pages/Programs";
 import ForSchools from "./pages/ForSchools";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Workshops from "./pages/Workshops";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
