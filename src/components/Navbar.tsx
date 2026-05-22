@@ -7,6 +7,7 @@ import vgenLogo from "@/assets/vgen-logo.png";
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Programs", path: "/programs" },
+  { label: "Workshops", path: "/workshops" },
   { label: "For Schools", path: "/for-schools" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
