@@ -196,6 +196,9 @@ const Workshops = () => {
         </div>
       </section>
 
+      {/* Workshop Registration & Enquiry */}
+      <WorkshopEnquiryForm />
+
       {/* CTA */}
       <section className="py-20 bg-hero-gradient relative overflow-hidden">
         <div
