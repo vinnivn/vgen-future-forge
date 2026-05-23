@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
 import WorkshopModal from "@/components/WorkshopModal";
+import WorkshopEnquiryForm from "@/components/WorkshopEnquiryForm";
 import { workshops, workshopCategories, type Workshop } from "@/data/workshops";
 import {
   Search, Clock, Users, ArrowRight, GraduationCap, School, Briefcase,
@@ -73,10 +74,10 @@ const Workshops = () => {
             </p>
             <div className="flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
-                <Link to="/contact">Enquire Now</Link>
+                <a href="#workshop-enquiry">Enquire Now</a>
               </Button>
               <Button asChild size="lg" className="bg-card text-foreground hover:bg-card/90 font-semibold">
-                <Link to="/contact">Book a Workshop</Link>
+                <a href="#workshop-enquiry">Book a Workshop</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold">
                 <Link to="/contact">Contact VGEN</Link>
@@ -195,6 +196,9 @@ const Workshops = () => {
         </div>
       </section>
 
+      {/* Workshop Registration & Enquiry */}
+      <WorkshopEnquiryForm />
+
       {/* CTA */}
       <section className="py-20 bg-hero-gradient relative overflow-hidden">
         <div
@@ -217,10 +221,10 @@ const Workshops = () => {
                 <Link to="/contact"><MessageSquare size={18} className="mr-2" />Contact VGEN</Link>
               </Button>
               <Button asChild size="lg" className="bg-card text-foreground hover:bg-card/90 font-semibold">
-                <Link to="/contact"><CalendarCheck size={18} className="mr-2" />Book a Workshop</Link>
+                <a href="#workshop-enquiry"><CalendarCheck size={18} className="mr-2" />Book a Workshop</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold">
-                <Link to="/contact"><Send size={18} className="mr-2" />Request Details</Link>
+                <a href="#workshop-enquiry"><Send size={18} className="mr-2" />Request Details</a>
               </Button>
             </div>
           </AnimatedSection>
