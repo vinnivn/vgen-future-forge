@@ -74,10 +74,10 @@ const Workshops = () => {
             </p>
             <div className="flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
-                <Link to="/contact">Enquire Now</Link>
+                <a href="#workshop-enquiry">Enquire Now</a>
               </Button>
               <Button asChild size="lg" className="bg-card text-foreground hover:bg-card/90 font-semibold">
-                <Link to="/contact">Book a Workshop</Link>
+                <a href="#workshop-enquiry">Book a Workshop</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold">
                 <Link to="/contact">Contact VGEN</Link>
