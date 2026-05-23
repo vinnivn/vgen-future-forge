@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
 import WorkshopModal from "@/components/WorkshopModal";
+import WorkshopEnquiryForm from "@/components/WorkshopEnquiryForm";
 import { workshops, workshopCategories, type Workshop } from "@/data/workshops";
 import {
   Search, Clock, Users, ArrowRight, GraduationCap, School, Briefcase,
