@@ -221,10 +221,10 @@ const Workshops = () => {
                 <Link to="/contact"><MessageSquare size={18} className="mr-2" />Contact VGEN</Link>
               </Button>
               <Button asChild size="lg" className="bg-card text-foreground hover:bg-card/90 font-semibold">
-                <Link to="/contact"><CalendarCheck size={18} className="mr-2" />Book a Workshop</Link>
+                <a href="#workshop-enquiry"><CalendarCheck size={18} className="mr-2" />Book a Workshop</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 font-semibold">
-                <Link to="/contact"><Send size={18} className="mr-2" />Request Details</Link>
+                <a href="#workshop-enquiry"><Send size={18} className="mr-2" />Request Details</a>
               </Button>
             </div>
           </AnimatedSection>
