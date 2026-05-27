@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
-import { Check, Sparkles, Target, Send, X } from "lucide-react";
+import { Check, Sparkles, Target, Send, X, BookOpen } from "lucide-react";
+import BrochureCard from "@/components/BrochureCard";
+import { getProgramBrochure, overallBrochure } from "@/data/brochures";
 
 export interface ProgramDetail {
   grade: string;
