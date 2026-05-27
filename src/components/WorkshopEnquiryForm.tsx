@@ -90,6 +90,26 @@ const WorkshopEnquiryForm = () => {
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [highlight, setHighlight] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+  useEffect(() => {
+    const onPreselect = (e: Event) => {
+      const ce = e as CustomEvent<{ title: string }>;
+      const title = ce.detail?.title;
+      if (!title) return;
+      setForm((f) => ({
+        ...f,
+        workshops: WORKSHOP_OPTIONS.includes(title)
+          ? Array.from(new Set([...f.workshops, title]))
+          : Array.from(new Set([...f.workshops, "Customized Workshop"])),
+      }));
+      setHighlight(true);
+      window.setTimeout(() => setHighlight(false), 2200);
+    };
+    window.addEventListener("workshop:preselect", onPreselect);
+    return () => window.removeEventListener("workshop:preselect", onPreselect);
+  }, []);
 
   const update = <K extends keyof typeof initialForm>(key: K, value: typeof initialForm[K]) =>
     setForm((f) => ({ ...f, [key]: value }));
