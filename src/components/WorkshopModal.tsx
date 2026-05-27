@@ -74,10 +74,8 @@ const WorkshopModal = ({ workshop, open, onOpenChange }: Props) => {
           </div>
 
           <div className="mt-7">
-            <Button asChild className="w-full bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold">
-              <Link to="/contact" onClick={() => onOpenChange(false)}>
-                <Send size={16} className="mr-2" /> Enquire for Workshop
-              </Link>
+            <Button onClick={handleEnquire} className="w-full bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold">
+              <Send size={16} className="mr-2" /> Enquire for Workshop
             </Button>
           </div>
         </div>
