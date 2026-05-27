@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Check, Clock, Users, Sparkles, Target, Wrench, X, Send } from "lucide-react";
 import type { Workshop } from "@/data/workshops";
 
@@ -12,8 +12,27 @@ interface Props {
 }
 
 const WorkshopModal = ({ workshop, open, onOpenChange }: Props) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   if (!workshop) return null;
   const Icon = workshop.icon;
+
+  const handleEnquire = () => {
+    onOpenChange(false);
+    const trigger = () => {
+      window.dispatchEvent(new CustomEvent("workshop:preselect", { detail: { title: workshop.title } }));
+      setTimeout(() => {
+        const el = document.getElementById("workshop-enquiry");
+        el?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    };
+    if (location.pathname !== "/workshops") {
+      navigate("/workshops");
+      setTimeout(trigger, 350);
+    } else {
+      setTimeout(trigger, 200);
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -55,10 +74,8 @@ const WorkshopModal = ({ workshop, open, onOpenChange }: Props) => {
           </div>
 
           <div className="mt-7">
-            <Button asChild className="w-full bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold">
-              <Link to="/contact" onClick={() => onOpenChange(false)}>
-                <Send size={16} className="mr-2" /> Enquire for Workshop
-              </Link>
+            <Button onClick={handleEnquire} className="w-full bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold">
+              <Send size={16} className="mr-2" /> Enquire for Workshop
             </Button>
           </div>
         </div>
