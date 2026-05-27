@@ -188,8 +188,12 @@ const WorkshopEnquiryForm = () => {
           {/* Form */}
           <AnimatedSection className="lg:col-span-3">
             <form
+              ref={formRef}
               onSubmit={handleSubmit}
-              className="relative rounded-3xl p-7 md:p-9 border border-border/60 bg-card/80 backdrop-blur-xl elevated-shadow"
+              className={cn(
+                "relative rounded-3xl p-7 md:p-9 border border-border/60 bg-card/80 backdrop-blur-xl elevated-shadow transition-all duration-500",
+                highlight && "ring-4 ring-primary/40 shadow-[0_0_60px_-10px_hsl(263_91%_66%/0.6)] animate-pulse"
+              )}
             >
               <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
               <h3 className="text-xl font-bold text-foreground mb-1">Submit Your Enquiry</h3>
