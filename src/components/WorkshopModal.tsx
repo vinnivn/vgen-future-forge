@@ -12,8 +12,27 @@ interface Props {
 }
 
 const WorkshopModal = ({ workshop, open, onOpenChange }: Props) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   if (!workshop) return null;
   const Icon = workshop.icon;
+
+  const handleEnquire = () => {
+    onOpenChange(false);
+    const trigger = () => {
+      window.dispatchEvent(new CustomEvent("workshop:preselect", { detail: { title: workshop.title } }));
+      setTimeout(() => {
+        const el = document.getElementById("workshop-enquiry");
+        el?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    };
+    if (location.pathname !== "/workshops") {
+      navigate("/workshops");
+      setTimeout(trigger, 350);
+    } else {
+      setTimeout(trigger, 200);
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
