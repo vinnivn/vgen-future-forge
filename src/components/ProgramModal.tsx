@@ -61,6 +61,26 @@ const ProgramModal = ({ program, open, onOpenChange }: Props) => {
             <Section icon={<Check size={16} />} title="Additional Features" items={program.features} />
           </div>
 
+          {/* Program Brochure */}
+          <div className="mt-7 rounded-2xl border border-border/60 bg-muted/30 p-5">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-7 h-7 rounded-md bg-hero-gradient text-primary-foreground flex items-center justify-center">
+                <BookOpen size={16} />
+              </span>
+              <h4 className="font-semibold text-foreground">Program Brochure</h4>
+            </div>
+            <p className="text-xs text-muted-foreground mb-4 pl-9">
+              Download detailed curriculum and program information.
+            </p>
+            <div className="grid grid-cols-1 gap-3">
+              {getProgramBrochure(program.grade) && (
+                <BrochureCard brochure={getProgramBrochure(program.grade)!} />
+              )}
+              <BrochureCard brochure={overallBrochure} />
+            </div>
+          </div>
+
+
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
             <Button asChild className="flex-1 bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold">
               <Link to="/contact" onClick={() => onOpenChange(false)}>
