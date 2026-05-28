@@ -15,7 +15,7 @@ export const overallBrochure: Brochure = {
   title: "VGEN Overall Brochure",
   description: "Complete VGEN program overview, vision, curriculum framework, and offerings.",
   file: "/brochures/vgen-overall.pdf",
-  available: false,
+  available: true,
 };
 
 export const programBrochures: Record<string, Brochure> = {
@@ -24,35 +24,35 @@ export const programBrochures: Record<string, Brochure> = {
     title: "Grade 5 Program Brochure",
     description: "Detailed curriculum, learning outcomes, fee structure, and program overview.",
     file: "/brochures/grade-5.pdf",
-    available: false,
+    available: true,
   },
   "Grade 6": {
     id: "grade-6",
     title: "Grade 6 Program Brochure",
     description: "Detailed curriculum, learning outcomes, fee structure, and program overview.",
     file: "/brochures/grade-6.pdf",
-    available: false,
+    available: true,
   },
   "Grade 7": {
     id: "grade-7",
     title: "Grade 7 Program Brochure",
     description: "Detailed curriculum, learning outcomes, fee structure, and program overview.",
     file: "/brochures/grade-7.pdf",
-    available: false,
+    available: true,
   },
   "Grade 8": {
     id: "grade-8",
     title: "Grade 8 Program Brochure",
     description: "Detailed curriculum, learning outcomes, fee structure, and program overview.",
     file: "/brochures/grade-8.pdf",
-    available: false,
+    available: true,
   },
   "Grade 9": {
     id: "grade-9",
     title: "Grade 9 Program Brochure",
     description: "Detailed curriculum, learning outcomes, fee structure, and program overview.",
     file: "/brochures/grade-9.pdf",
-    available: false,
+    available: true,
   },
 };
 
