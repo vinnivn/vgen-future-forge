@@ -7,25 +7,24 @@ import ProgramModal, { type ProgramDetail } from "@/components/ProgramModal";
 import { programDetails } from "@/data/programDetails";
 import heroBg from "@/assets/hero-bg.jpg";
 import {
-  Cpu, Cog, Lightbulb, Users, BookOpen, Rocket, Gamepad2,
+  Cpu, Lightbulb, Rocket, GraduationCap, Briefcase, HeartHandshake, Sparkles,
 } from "lucide-react";
 
 const cardSubtitles: Record<string, string> = {
-  "Grade 5": "RC Bot & Robo Soccer",
-  "Grade 6": "Milo Bot",
-  "Grade 7": "Geary Tech",
-  "Grade 8": "Neo Bot",
-  "Grade 9": "Grab-It",
+  "Grade 5": "Robotics & AI Awareness",
+  "Grade 6": "Electronics & Innovation",
+  "Grade 7": "Generative AI & Entrepreneurship",
+  "Grade 8": "IoT, Agentic AI & Product Design",
+  "Grade 9": "Automation & Community Innovation",
 };
 
 const whyUs = [
-  { icon: Gamepad2, label: "Play-based Learning" },
-  { icon: Cpu, label: "Hands-on Learning" },
-  { icon: BookOpen, label: "Structured Curriculum" },
-  { icon: Cog, label: "Real-world Projects" },
-  { icon: Users, label: "Expert Guidance" },
-  { icon: Lightbulb, label: "Innovation-focused" },
-  { icon: Rocket, label: "Student Engagement" },
+  { icon: GraduationCap, label: "Future Skills Curriculum", desc: "Preparing students for tomorrow's careers through interdisciplinary learning." },
+  { icon: Cpu, label: "Artificial Intelligence", desc: "Introducing Generative AI, Agentic AI, automation, and responsible AI." },
+  { icon: Lightbulb, label: "Innovation", desc: "Developing creativity, design thinking, and product innovation skills." },
+  { icon: Briefcase, label: "Entrepreneurship", desc: "Helping learners transform ideas into impactful ventures." },
+  { icon: HeartHandshake, label: "Community Problem Solving", desc: "Encouraging students to solve real-world challenges affecting society." },
+  { icon: Sparkles, label: "Experiential Learning", desc: "Hands-on projects, prototypes, competitions, and innovation challenges." },
 ];
 
 const Index = () => {
@@ -48,11 +47,11 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10 py-20">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-up">
-              Explore the Future<br />
-              <span className="text-accent">With Us</span>
+              Preparing Future Innovators,<br />
+              <span className="text-accent">Entrepreneurs & Technology Leaders</span>
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-              Hands-on Robotics Programs available for Grades 5–9
+              VGEN empowers students through hands-on learning in Robotics, Artificial Intelligence, Entrepreneurship, Innovation, Emerging Technologies, and Community Problem Solving — building future-ready skills beyond traditional education.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-8">
@@ -70,9 +69,9 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <SectionHeading title="About VGEN" gradient />
+            <SectionHeading title="About VGEN" subtitle="Building Future Innovators." gradient />
             <p className="text-center text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-              At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs, designed for Grades 5 to 9, transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way.
+              VGEN is a Future Skills and Innovation Platform dedicated to preparing students for tomorrow's world through experiential learning. By integrating Robotics, Artificial Intelligence, Entrepreneurship, Design Thinking, Coding, Emerging Technologies, and Community Innovation, VGEN empowers learners to become innovators, creators, entrepreneurs, and responsible problem-solvers capable of creating meaningful impact.
             </p>
           </AnimatedSection>
         </div>
@@ -81,7 +80,7 @@ const Index = () => {
       {/* Programs */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
-          <SectionHeading title="Our Programs" subtitle="Click any card to explore the full program details" />
+          <SectionHeading title="Our Future Skills Programs" subtitle="Click any card to explore the full program details" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {programDetails.map((p, i) => (
               <AnimatedSection key={p.grade} delay={i * 100}>
@@ -107,18 +106,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Why VGEN */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <SectionHeading title="Why Choose VGEN?" gradient />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <SectionHeading title="Why VGEN?" subtitle="A complete Future Skills ecosystem for tomorrow's innovators" gradient />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {whyUs.map((item, i) => (
               <AnimatedSection key={item.label} delay={i * 80}>
-                <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-muted/50 transition-colors">
-                  <div className="w-14 h-14 rounded-full bg-hero-gradient flex items-center justify-center mb-3">
-                    <item.icon className="text-primary-foreground" size={24} />
+                <div className="bg-card rounded-xl p-6 card-shadow h-full hover:elevated-shadow hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-hero-gradient flex items-center justify-center mb-4">
+                    <item.icon className="text-primary-foreground" size={22} />
                   </div>
-                  <span className="text-sm font-semibold text-foreground">{item.label}</span>
+                  <h3 className="font-bold text-foreground mb-2">{item.label}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -131,10 +131,10 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-              Bring Robotics to Your School Today
+              Bring Future Skills Learning to Your School
             </h2>
             <p className="text-primary-foreground/80 mb-8 text-lg">
-              Partner with VGEN to create future-ready students.
+              Partner with VGEN to build innovators, entrepreneurs, and future technology leaders.
             </p>
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-10">
               <Link to="/contact">Contact Now</Link>
