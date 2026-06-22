@@ -63,14 +63,14 @@ const Workshops = () => {
               VGEN Innovation Programs
             </span>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up leading-tight" style={{ animationDelay: "0.1s" }}>
-              Technology Workshops &<br />
-              <span className="text-accent">Innovation Programs</span>
+              Technology & Innovation<br />
+              <span className="text-accent">Workshops</span>
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/85 mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Hands-on workshops, bootcamps, and future technology experiences designed for students, colleges, institutions, professionals, and innovators.
+              Hands-on workshops and bootcamps across Artificial Intelligence, Innovation, Entrepreneurship, Emerging Technologies, Robotics, Cybersecurity, IoT, Coding, Design Thinking, and Community Innovation.
             </p>
             <p className="text-primary-foreground/70 mb-8 max-w-2xl animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              VGEN conducts practical, industry-oriented workshops focused on emerging technologies, innovation, problem-solving, and real-world applications. Our programs are designed to bridge the gap between education and future technology through immersive learning experiences.
+              Designed for students, colleges, institutions, professionals, and innovators — our programs bridge education and future technology through immersive, industry-oriented learning.
             </p>
             <div className="flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">

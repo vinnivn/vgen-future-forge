@@ -5,12 +5,25 @@ import SectionHeading from "@/components/SectionHeading";
 import {
   GraduationCap, Target, Lightbulb, CalendarDays, Award, Users,
   Presentation, Trophy, CheckCircle2, ArrowRight, Settings, HeartHandshake,
+  Cpu, Briefcase, FlaskConical, BadgeCheck, Building2,
 } from "lucide-react";
 
 const objectives = [
-  { icon: GraduationCap, label: "STEM Learning", desc: "Integrate robotics into school curriculum to make learning more practical and engaging. Students connect science, technology, engineering, and mathematics through hands-on activities, helping them understand concepts better and apply them in real-life situations." },
-  { icon: Target, label: "Skill Development", desc: "Build critical thinking, logical reasoning, and problem-solving abilities through interactive projects and challenges. Students develop confidence, teamwork, and analytical skills that are essential for both academic success and future careers." },
-  { icon: Lightbulb, label: "Innovation", desc: "Encourage creative solutions through technology by allowing students to explore, design, and experiment with their ideas. This fosters an innovative mindset, enabling them to think independently and develop unique approaches to real-world problems." },
+  { icon: GraduationCap, label: "Future Skills Curriculum", desc: "A year-long, interdisciplinary curriculum integrating Robotics, Artificial Intelligence, Innovation, Entrepreneurship, and Community Problem Solving — aligned with each grade for progressive learning." },
+  { icon: Target, label: "Skill Development", desc: "Build critical thinking, problem-solving, communication, and entrepreneurial mindset through hands-on projects, prototypes, and real-world challenges that prepare students for tomorrow's careers." },
+  { icon: Lightbulb, label: "Innovation & Impact", desc: "Encourage creative thinking and community-driven innovation, enabling students to design solutions that solve real problems and create meaningful impact around them." },
+];
+
+const offerings = [
+  { icon: CalendarDays, label: "Year-long Future Skills Curriculum" },
+  { icon: Cpu, label: "Robotics" },
+  { icon: FlaskConical, label: "Artificial Intelligence" },
+  { icon: Briefcase, label: "Entrepreneurship" },
+  { icon: Lightbulb, label: "Innovation Labs" },
+  { icon: HeartHandshake, label: "Community Problem Solving" },
+  { icon: Users, label: "Teacher Capacity Building" },
+  { icon: BadgeCheck, label: "Student Certifications" },
+  { icon: Building2, label: "Industry Exposure" },
 ];
 
 const highlights = [
@@ -18,15 +31,15 @@ const highlights = [
   { icon: Award, label: "Monthly Workshops" },
   { icon: Presentation, label: "Expert Sessions" },
   { icon: Users, label: "Team Assignments" },
-  { icon: Trophy, label: "Robotics Events" },
+  { icon: Trophy, label: "Innovation Challenges" },
   { icon: CheckCircle2, label: "Final Demo Day" },
 ];
 
 const benefits = [
-  "Improves academic profile and STEM reputation",
-  "Engages students with interactive learning",
-  "Builds future-ready technology skills",
-  "Provides structured extracurricular programs",
+  "Positions your school as a Future Skills & Innovation leader",
+  "Engages students through experiential, project-based learning",
+  "Builds AI, entrepreneurship, and emerging technology skills",
+  "Provides structured curriculum, teacher training, and certifications",
 ];
 
 const ForSchools = () => (
@@ -35,7 +48,7 @@ const ForSchools = () => (
       {/* Intro */}
       <SectionHeading
         title="For Schools"
-        subtitle="Bring cutting-edge robotics education to your campus with a turnkey program."
+        subtitle="Partner with VGEN as your academic Future Skills partner — bringing Robotics, AI, Innovation, and Entrepreneurship into your campus through a complete year-long program."
         gradient
       />
 
@@ -51,6 +64,21 @@ const ForSchools = () => (
                 </div>
                 <h4 className="font-bold text-foreground mb-2">{o.label}</h4>
                 <p className="text-muted-foreground text-sm">{o.desc}</p>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </section>
+
+      {/* What We Offer */}
+      <section className="mb-20">
+        <h3 className="text-2xl font-bold text-center mb-8 text-foreground">What We Offer Schools</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {offerings.map((o, i) => (
+            <AnimatedSection key={o.label} delay={i * 50}>
+              <div className="flex items-center gap-3 bg-card rounded-lg p-4 card-shadow">
+                <o.icon size={20} className="text-secondary flex-shrink-0" />
+                <span className="text-sm font-medium text-foreground">{o.label}</span>
               </div>
             </AnimatedSection>
           ))}
@@ -103,7 +131,7 @@ const ForSchools = () => (
             </div>
             <h3 className="text-2xl font-bold mb-3 text-foreground">Easy Implementation</h3>
             <p className="text-muted-foreground mb-6">
-              Simple setup, weekly schedule, and full support provided. We handle everything so your school can focus on what matters.
+              Simple setup, weekly schedule, teacher training, and complete academic support — so your school can focus on learning while we deliver the Future Skills experience.
             </p>
             <Button asChild className="bg-hero-gradient text-primary-foreground hover:opacity-90 font-semibold px-8">
               <Link to="/contact">Partner With Us</Link>

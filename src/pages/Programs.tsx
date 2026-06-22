@@ -18,8 +18,8 @@ const Programs = () => {
     <main className="py-20">
       <div className="container mx-auto px-4">
         <SectionHeading
-          title="Our Programs"
-          subtitle="Structured robotics curriculum from Grade 5 to Grade 9 — click any card for full details"
+          title="Our Future Skills Programs"
+          subtitle="Grade 5 to Grade 9 — integrating Robotics, AI, Innovation, Entrepreneurship, and Community Problem Solving"
           gradient
         />
 

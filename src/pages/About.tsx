@@ -1,12 +1,14 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
-import { Eye, Rocket, Cpu, Wrench, Lightbulb, GraduationCap } from "lucide-react";
+import { Eye, Rocket, Cpu, Lightbulb, Briefcase, HeartHandshake } from "lucide-react";
 
 const values = [
-  { icon: Cpu, label: "Hands-on Learning", desc: "Students learn by building real robots and circuits, gaining practical experience with electronics, sensors, and coding. This approach helps them understand concepts clearly while developing confidence through active participation and experimentation." },
-  { icon: Lightbulb, label: "Creativity & Innovation", desc: "We encourage creative thinking and unique solutions by allowing students to design, experiment, and improve their own ideas. This fosters innovation and helps students think beyond textbooks to solve real-world problems." },
-  { icon: Wrench, label: "Real-world Application", desc: "Projects are designed to reflect real industry challenges and technologies, giving students exposure to practical use cases. This helps them understand how robotics and automation are applied in everyday life and future careers." },
-  { icon: GraduationCap, label: "Structured Education", desc: "Our grade-wise curriculum is carefully designed for progressive learning, ensuring students build strong foundations before moving to advanced concepts. Each level is aligned to their understanding, making learning smooth and effective." },
+  { icon: Lightbulb, label: "Innovation", desc: "We nurture creative thinking, design mindset, and the ability to turn ideas into real solutions — empowering students to invent, prototype, and bring meaningful innovations to life." },
+  { icon: Cpu, label: "Technology", desc: "From Robotics and AI to IoT, Coding, and Emerging Technologies, students gain practical exposure to the tools shaping tomorrow's industries and careers." },
+  { icon: Rocket, label: "Leadership", desc: "We build confidence, communication, and decision-making skills so students grow into responsible leaders ready to guide teams and drive change." },
+  { icon: Briefcase, label: "Entrepreneurship", desc: "Learners explore how to convert ideas into ventures — through design thinking, business pitching, and real product development experiences." },
+  { icon: HeartHandshake, label: "Community Impact", desc: "Students apply technology to solve real community challenges, learning that innovation matters most when it improves lives around them." },
+  { icon: Eye, label: "Experiential Learning", desc: "Hands-on projects, prototypes, workshops, and innovation challenges turn theory into deep, lasting understanding." },
 ];
 
 const About = () => (
@@ -14,7 +16,7 @@ const About = () => (
     <div className="container mx-auto px-4">
       <SectionHeading
         title="About VGEN"
-        subtitle="At VGEN, we are dedicated to enhancing the gyan (knowledge) of students through hands-on robotics and technology-driven learning. Our programs are designed to transform curiosity into creativity by enabling students to explore electronics, coding, and real-world problem-solving in an engaging way. We focus on building practical skills, logical thinking, and innovation from an early stage, empowering students to not just learn technology but create with it. Through structured learning, expert guidance, and project-based experiences, VGEN nurtures confident, future-ready individuals who are prepared to lead in a rapidly evolving technological world."
+        subtitle="VGEN is a Future Skills & Innovation Platform preparing students for tomorrow's world through experiential learning. By integrating Robotics, Artificial Intelligence, Entrepreneurship, Design Thinking, Coding, Emerging Technologies, and Community Innovation, VGEN empowers learners to become innovators, creators, entrepreneurs, and responsible problem-solvers capable of creating meaningful impact."
         gradient
       />
 
@@ -41,9 +43,13 @@ const About = () => (
               <Rocket className="text-primary-foreground" size={28} />
             </div>
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-            <p className="text-primary-foreground/85 leading-relaxed">
-              To provide hands-on education that simplifies technology and encourages innovation among school students.
-            </p>
+            <ul className="space-y-2 text-primary-foreground/90 leading-relaxed text-sm list-disc list-inside">
+              <li>Inspire innovation through experiential learning.</li>
+              <li>Equip learners with future-ready technology skills.</li>
+              <li>Foster entrepreneurship and leadership from an early age.</li>
+              <li>Encourage students to solve real community problems using technology.</li>
+              <li>Build an innovation ecosystem connecting schools, colleges, industries, and communities.</li>
+            </ul>
           </div>
         </AnimatedSection>
         <AnimatedSection delay={150}>
@@ -53,7 +59,7 @@ const About = () => (
             </div>
             <h3 className="text-2xl font-bold mb-4 text-foreground">Our Vision</h3>
             <p className="text-muted-foreground leading-relaxed">
-              To create future-ready students who can build and innovate using technology, empowered by practical robotics knowledge.
+              To create a generation of innovative thinkers, ethical leaders, entrepreneurs, and technology creators who solve real-world problems and contribute positively to society.
             </p>
           </div>
         </AnimatedSection>

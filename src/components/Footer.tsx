@@ -9,7 +9,7 @@ const Footer = () => (
         <div>
           <h3 className="text-2xl font-bold mb-3">VGEN</h3>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
-            Explore the Future With Us. Hands-on robotics education for school students.
+            VGEN is a Future Skills & Innovation Platform preparing learners for tomorrow through Robotics, Artificial Intelligence, Innovation, Entrepreneurship, Emerging Technologies, and Community Problem Solving.
           </p>
         </div>
 
@@ -35,13 +35,13 @@ const Footer = () => (
 
         {/* Programs */}
         <div>
-          <h4 className="font-semibold mb-3">Programs</h4>
+          <h4 className="font-semibold mb-3">Future Skills Programs</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/70">
-            <li>Grade 5 – RC Bot & Robo Soccer</li>
-            <li>Grade 6 – Beginner</li>
-            <li>Grade 7 – Foundations</li>
-            <li>Grade 8 – Intermediate</li>
-            <li>Grade 9 – Humanoid</li>
+            <li>Grade 5 – Robotics & AI Awareness</li>
+            <li>Grade 6 – Electronics & Innovation</li>
+            <li>Grade 7 – Generative AI & Entrepreneurship</li>
+            <li>Grade 8 – IoT, Agentic AI & Product Design</li>
+            <li>Grade 9 – Automation & Community Innovation</li>
           </ul>
         </div>
 
