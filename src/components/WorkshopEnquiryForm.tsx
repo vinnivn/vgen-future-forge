@@ -37,7 +37,7 @@ const WORKSHOP_OPTIONS = [
   "Startup & Entrepreneurship Bootcamp",
   "Smart Agriculture & Rural Innovation Workshop",
   "Emerging Technology Bootcamp",
-  "Customized Workshop",
+  "Customised Workshop",
 ];
 const DURATIONS = ["Half Day", "1 Day", "2 Days", "3 Days", "1 Week", "Custom Duration"];
 const PARTICIPANT_RANGES = ["50–100", "100–300", "300–500", "500+"];
@@ -102,7 +102,7 @@ const WorkshopEnquiryForm = () => {
         ...f,
         workshops: WORKSHOP_OPTIONS.includes(title)
           ? Array.from(new Set([...f.workshops, title]))
-          : Array.from(new Set([...f.workshops, "Customized Workshop"])),
+          : Array.from(new Set([...f.workshops, "Customised Workshop"])),
       }));
       setHighlight(true);
       window.setTimeout(() => setHighlight(false), 2200);
