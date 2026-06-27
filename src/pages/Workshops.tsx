@@ -9,8 +9,15 @@ import WorkshopEnquiryForm from "@/components/WorkshopEnquiryForm";
 import { workshops, workshopCategories, type Workshop } from "@/data/workshops";
 import {
   Search, Clock, Users, ArrowRight, GraduationCap, School, Briefcase,
-  Lightbulb, Sparkles, UserCircle2, Send, CalendarCheck, MessageSquare,
+  Lightbulb, Sparkles, UserCircle2, Send, CalendarCheck, MessageSquare, Settings2,
 } from "lucide-react";
+
+const requestCustomWorkshop = () => {
+  window.dispatchEvent(new CustomEvent("workshop:preselect", { detail: { title: "Customised Workshop" } }));
+  setTimeout(() => {
+    document.getElementById("workshop-enquiry")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 50);
+};
 
 const audienceCards = [
   { icon: School, label: "School Students" },
