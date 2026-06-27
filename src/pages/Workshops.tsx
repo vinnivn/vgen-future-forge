@@ -179,6 +179,55 @@ const Workshops = () => {
                   </AnimatedSection>
                 );
               })}
+
+              {/* Customised Workshops card — always last */}
+              <AnimatedSection delay={filtered.length * 60}>
+                <div className="group h-full rounded-2xl p-6 elevated-shadow hover:-translate-y-1 transition-all duration-300 flex flex-col bg-hero-gradient text-primary-foreground relative overflow-hidden">
+                  <div
+                    className="absolute inset-0 opacity-30 pointer-events-none"
+                    style={{ backgroundImage: "radial-gradient(circle at 80% 20%, hsl(263 91% 66% / 0.6), transparent 50%)" }}
+                  />
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-card/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Settings2 size={22} />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest opacity-90">Custom</span>
+                    </div>
+                    <h3 className="text-lg font-bold mb-1 leading-snug">Customised Workshops</h3>
+                    <p className="text-xs font-medium opacity-90 mb-3">Tailored Technology Programs for Your Institution</p>
+                    <p className="text-sm opacity-90 mb-4 flex-1">
+                      Every institution has unique learning goals. VGEN designs customised workshops based on your requirements, audience, duration, technology domain, and learning outcomes — from one-day awareness sessions to week-long bootcamps.
+                    </p>
+
+                    <div className="space-y-2 mb-4 text-xs">
+                      <div className="flex items-center gap-2 opacity-90">
+                        <Clock size={13} />
+                        <span><strong>Duration:</strong> Flexible</span>
+                      </div>
+                      <div className="flex items-start gap-2 opacity-90">
+                        <Users size={13} className="mt-0.5" />
+                        <span><strong>Audience:</strong> Customised — Schools, Colleges, Corporates, NGOs &amp; more</span>
+                      </div>
+                    </div>
+
+                    <div className="mb-5">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider opacity-80 mb-2">Possible Topics</p>
+                      <p className="text-xs opacity-90 leading-relaxed">
+                        AI · Generative AI · Agentic AI · Robotics · IoT · Coding · Entrepreneurship · Design Thinking · Cybersecurity · Cloud · App Dev · Innovation · Community Problem Solving
+                      </p>
+                    </div>
+
+                    <Button
+                      onClick={requestCustomWorkshop}
+                      className="w-full font-semibold bg-card text-foreground hover:bg-card/90"
+                    >
+                      Request Custom Workshop
+                      <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
+                </div>
+              </AnimatedSection>
             </div>
           )}
         </div>
