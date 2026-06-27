@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
+      <div className="container mx-auto flex items-center justify-between h-20 px-4">
         <div className="flex items-center gap-3">
           {!isHome && (
             <button
@@ -33,8 +33,8 @@ const Navbar = () => {
             </button>
           )}
           <Link to="/" className="flex items-center gap-2">
-            <img src={vgenLogo} alt="VGEN Logo" className="h-9 w-9 object-contain" />
-            <span className="font-heading text-2xl font-bold text-gradient">VGEN</span>
+            <img src={vgenLogo} alt="VGEN Logo" className="h-12 w-12 md:h-14 md:w-14 object-contain" />
+            <span className="font-heading text-2xl md:text-3xl font-bold text-gradient">VGEN</span>
           </Link>
         </div>
 

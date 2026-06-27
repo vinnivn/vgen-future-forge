@@ -11,11 +11,11 @@ import {
 } from "lucide-react";
 
 const cardSubtitles: Record<string, string> = {
-  "Grade 5": "Robotics & AI Awareness",
-  "Grade 6": "Electronics & Innovation",
-  "Grade 7": "Generative AI & Entrepreneurship",
-  "Grade 8": "IoT, Agentic AI & Product Design",
-  "Grade 9": "Automation & Community Innovation",
+  "Grade 5": "AI Spark",
+  "Grade 6": "Tech Fusion",
+  "Grade 7": "GenAI Builder",
+  "Grade 8": "Vortex AI",
+  "Grade 9": "ImpactX",
 };
 
 const whyUs = [
