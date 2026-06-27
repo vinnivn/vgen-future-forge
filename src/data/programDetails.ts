@@ -8,7 +8,7 @@ import type { ProgramDetail } from "@/components/ProgramModal";
 export const programDetails: ProgramDetail[] = [
   {
     grade: "Grade 5",
-    title: "Grade 5 – Robotics Foundations & AI Awareness",
+    title: "AI Spark (Grade 5)",
     image: rcSoccerImg,
     shortDesc:
       "A beginner-friendly Future Skills program introducing students to robotics, basic AI concepts, creative thinking, and teamwork through hands-on activities like RC Bot building and Robo Soccer.",
@@ -34,7 +34,7 @@ export const programDetails: ProgramDetail[] = [
   },
   {
     grade: "Grade 6",
-    title: "Grade 6 – Electronics, Milo Bot & Innovation",
+    title: "Tech Fusion (Grade 6)",
     image: ottoBotImg,
     shortDesc:
       "Students explore electronics, beginner robotics with Milo Bot, basic AI concepts, and innovation projects that build problem-solving skills from an early age.",
@@ -60,7 +60,7 @@ export const programDetails: ProgramDetail[] = [
   },
   {
     grade: "Grade 7",
-    title: "Grade 7 – Arduino, Generative AI & Entrepreneurship",
+    title: "GenAI Builder (Grade 7)",
     image: lineFollowerImg,
     shortDesc:
       "A Future Skills program integrating Arduino, sensors, Generative AI, design thinking, and entrepreneurship basics through structured project-based learning.",
@@ -86,7 +86,7 @@ export const programDetails: ProgramDetail[] = [
   },
   {
     grade: "Grade 8",
-    title: "Grade 8 – IoT, Neo Bot, Agentic AI & Product Design",
+    title: "Vortex AI (Grade 8)",
     image: rcBotImg,
     shortDesc:
       "An intermediate program focused on IoT, smart robotics with Neo Bot, Agentic AI, product design, and startup thinking — preparing students to build intelligent, real-world solutions.",
@@ -112,7 +112,7 @@ export const programDetails: ProgramDetail[] = [
   },
   {
     grade: "Grade 9",
-    title: "Grade 9 – Automation, Community Innovation & Business Pitch",
+    title: "ImpactX (Grade 9)",
     image: pickPlaceImg,
     shortDesc:
       "An advanced Future Skills program combining automation, robotic systems, AI applications, community innovation, prototype development, and business pitching.",

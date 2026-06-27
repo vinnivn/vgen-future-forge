@@ -37,11 +37,11 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold mb-3">Future Skills Programs</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/70">
-            <li>Grade 5 – Robotics & AI Awareness</li>
-            <li>Grade 6 – Electronics & Innovation</li>
-            <li>Grade 7 – Generative AI & Entrepreneurship</li>
-            <li>Grade 8 – IoT, Agentic AI & Product Design</li>
-            <li>Grade 9 – Automation & Community Innovation</li>
+            <li>AI Spark (Grade 5)</li>
+            <li>Tech Fusion (Grade 6)</li>
+            <li>GenAI Builder (Grade 7)</li>
+            <li>Vortex AI (Grade 8)</li>
+            <li>ImpactX (Grade 9)</li>
           </ul>
         </div>
 
