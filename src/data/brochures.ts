@@ -1,5 +1,7 @@
 // Brochure registry. PDFs are placed in /public/brochures/ and referenced by absolute path.
+// Large brochures are externalized via lovable-assets and imported as .asset.json pointers.
 // Workshop brochures are intentionally NOT displayed yet — structure is ready for future uploads.
+import grade9Asset from "../../public/brochures/grade-9.pdf.asset.json";
 
 export interface Brochure {
   id: string;
@@ -51,7 +53,7 @@ export const programBrochures: Record<string, Brochure> = {
     id: "grade-9",
     title: "Grade 9 Program Brochure",
     description: "Detailed curriculum, learning outcomes, fee structure, and program overview.",
-    file: "/brochures/grade-9.pdf",
+    file: grade9Asset.url,
     available: true,
   },
 };
